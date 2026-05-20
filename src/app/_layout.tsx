@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 
-// I change the stylesheet to make the profile screen look better. 04/30/2026
+// Changed the profile screen to make it more appealing. 5/20/2026
 export default function Index() {
   return (
     <View style={styles.screen}>
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flex: 1, 
     alignItems: 'center', 
     justifyContent: 'center',
-    backgroundColor: 'white'
+    backgroundColor: '#FBF5E6'
   },
   photo: { 
     width: 120, 
