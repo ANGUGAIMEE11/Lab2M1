@@ -1,16 +1,39 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import React from 'react';
-import { useColorScheme } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+// I change the stylesheet to make the profile screen look better. 04/30/2026
+export default function Index() {
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
-    </ThemeProvider>
+    <View style={styles.screen}>
+      <Image 
+        source={require('../../assets/images/profile.jpg')}
+        style={styles.photo} 
+      />
+      <Text style={styles.name}>Aimee Naomi A. Ang-ug</Text>
+      <Text style={styles.bio}>MMA Student · CS126</Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  screen: { 
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
+    backgroundColor: 'white'
+  },
+  photo: { 
+    width: 120, 
+    height: 120, 
+    borderRadius: 60,
+    resizeMode: 'cover',
+  },
+  name: { 
+    fontSize: 22, 
+    fontWeight: 'bold', 
+    marginTop: 12 
+  },
+  bio: { 
+    fontSize: 14, 
+    color: '#888' 
+  },
+});
